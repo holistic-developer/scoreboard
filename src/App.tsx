@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { ScoreCard } from './components/score-card.tsx';
 import { Button } from './components/ui/button.tsx';
 import { Input } from './components/ui/input.tsx';
@@ -9,6 +9,18 @@ export const App = () => {
   const teamNameRef = useRef<HTMLInputElement>(null);
   const {teams, add, reset, undo} = useScoreboardState((state) => state);
   const points = Object.values(teams).sort((a,b) => b-a);
+
+  const handleCtrlZ = useCallback((event: KeyboardEvent) => {
+    if (event.ctrlKey && event.key == "z") {
+      undo();
+    }
+  }, [undo]);
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleCtrlZ );
+    return () => window.removeEventListener("keydown", handleCtrlZ);
+  }, [handleCtrlZ]);
+
   return (
     <>
       <main style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))'}}

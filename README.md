@@ -11,7 +11,7 @@ If their answer is **wrong** all the others get **1 point**.
 ## Features
 
 - Add and remove teams / players
-- Undo actions
+- Undo actions (using <kbd>CTRL</kbd>+<kbd>z</kbd>)
 - Current rank is shown
 - Adjusts to max screen width
 - Reset everything
