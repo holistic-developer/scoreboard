@@ -4,6 +4,8 @@ This scoreboard is intended for quiz games.
 
 Put it on a big screen and zoom up your browser as much as possible.
 
+![Example scoreboard](./example-screenshot.png)
+
 If a team / player answers a question **correct**, they get **10 points**.
 
 If their answer is **wrong** all the others get **1 point**.
