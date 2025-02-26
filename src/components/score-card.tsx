@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 export const ScoreCard: React.FC<{ teamName: string, rank: number }> = ({teamName, rank}) => {
   const {teams, drop, award, punish} = useScoreboardState();
   return (
-    <Card>
+    <Card className="flex-grow max-w-80">
       <CardHeader className="relative">
         <CardTitle className="text-center">{rank == 1 ? '🥇 ' : rank == 2 ? '🥈 ' : rank == 3 ? '🥉 ': ''}{teamName}</CardTitle>
         <CardDescription className="text-center">#{rank}</CardDescription>

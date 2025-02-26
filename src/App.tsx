@@ -33,8 +33,7 @@ export const App = () => {
 
   return (
     <>
-      <main style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))'}}
-            className="gap-2 m-2 justify-center">
+      <main className="flex flex-wrap gap-2 m-2 justify-center">
         {Object.keys(teams)
           .map((name) =>
             <ScoreCard key={name} teamName={name} rank={points.indexOf(teams[name]) + 1}
